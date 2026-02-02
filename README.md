@@ -29,3 +29,8 @@ Run the program using the command below:
 ```bash
 python bitcoin_code_explainer.py
 
+## Explanation:
+- transaction: Handles sending or receiving Bitcoin (transactions).
+- verify: Checks whether something is valid.
+- signature: Ensures the transaction is authorized.
+
