@@ -1,0 +1,60 @@
+# Bitcoin Code Explainer
+
+A minimal, keyword-based Python tool that helps beginners and reviewers understand Bitcoin-related code by mapping common terms (mempool, transaction, script, signature, etc.) to short explanations.
+
+## Features
+- Small, dependency-free Python class.
+- Simple CLI to explain a snippet or file.
+- Easy to extend knowledge base at runtime or in code.
+- Unit-test friendly.
+
+## Installation
+Clone the repo and (optionally) create a virtual environment:
+
+```bash
+git clone <your-repo-url>
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+No external packages are required for the baseline functionality.
+
+## Usage
+
+Explain an inline snippet:
+```bash
+python cli.py -s "VerifyTransaction(tx); // check signature"
+```
+
+Explain a file:
+```bash
+python cli.py -f examples/example.cpp
+```
+
+List known terms:
+```bash
+python cli.py -t
+```
+
+## Example (Python)
+```python
+from bitcoin_code_explainer import BitcoinCodeExplainerAgent
+
+agent = BitcoinCodeExplainerAgent()
+code = "bool VerifyTransaction(const CTransaction& tx) { /* check signature */ }"
+print(agent.explain(code))
+```
+
+## Contributing
+- Add more Bitcoin-specific terms to `DEFAULT_KB` in `bitcoin_code_explainer.py`.
+- Add tests in `tests/`.
+- Open issues for feature requests (e.g., AST-aware analysis, ML-backed explanations, editor integration).
+
+## Roadmap
+- Add AST-based detection for C++/Python/JS to reduce false positives.
+- Add a web UI and an editor plugin.
+- Integrate small ML model or embeddings for contextual explanations.
+
+## License
+MIT
