@@ -22,3 +22,10 @@ in plain English.
 
 This project is built as a learning tool and does not modify or interact with
 the Bitcoin network.
+## How to Run
+
+Run the program using the command below:
+
+```bash
+python bitcoin_code_explainer.py
+
